@@ -8,6 +8,10 @@ runtime/
 data/raw/
 *.tmp
 .env
+ForecastOps_Implementation_Plan.md
+TASK_TRACKER.md
+WALKTHROUGH.md
+docs/DEPLOYMENT.md
 datasets/*
 !datasets/bike+sharing+dataset/
 datasets/bike+sharing+dataset/*
