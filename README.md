@@ -2,7 +2,7 @@
 
 A historical bike-rental demand forecasting demo with leakage-aware backtesting, five fixed candidates, validation-only selection, a versioned FastAPI artifact, and a separate day-ahead monitoring replay. **All dates refer to 2011–2012 historical data. This is not a live demand forecast.**
 
-[Dashboard screenshot](output/playwright/dashboard-full.png) · [API docs screenshot](output/playwright/api-docs.png) · [Real prediction response](output/playwright/prediction-response.png) · [Code walkthrough](WALKTHROUGH.md)
+[Dashboard screenshot](output/playwright/dashboard-full.png) · [API docs screenshot](output/playwright/api-docs.png) · [Real prediction response](output/playwright/prediction-response.png) · [Beginner-to-advanced walkthrough](WALKTHROUGH.md) · [Deployment guide](docs/DEPLOYMENT.md)
 
 ## Results
 
@@ -75,7 +75,7 @@ docker build -t forecastops:local .
 docker run --rm -p 10000:10000 -e PORT=10000 forecastops:local
 ```
 
-Docker was unavailable on the development machine, so these commands and container readiness are **not yet verified**. A Render deployment also remains pending because this directory has no Git repository/remote and no Render service credentials. When available, deploy this Docker image as a web service, set `/health` as health check, and verify `/predict`, `/monitoring`, `/docs`, and `/` at the deployed URL. Render filesystem resets can discard mutable runtime SQLite; the bundled seed restores the historical snapshot. Check [Render's current free service terms](https://render.com/docs/free) before choosing a plan.
+Docker was unavailable on the development machine, so these commands and container readiness are **not yet verified**. The GitHub remote is `https://github.com/saidarshan20/ForecastOps.git`; a Render service and live URL are still pending. Render can build this Dockerfile remotely. Follow the [step-by-step deployment guide](docs/DEPLOYMENT.md) to create the web service and verify `/health`, `/predict`, `/monitoring`, `/docs`, and `/`. Render filesystem resets can discard mutable runtime SQLite; the bundled seed restores the historical snapshot.
 
 ## Layout and limits
 
