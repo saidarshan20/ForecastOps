@@ -36,7 +36,8 @@ Read this file, `ForecastOps_Implementation_Plan.md`, and `docs/experiment_contr
 - Held-out test: Holt-Winters MAE 1349.46 versus seasonal naive 1497.66 (9.90% improvement). Ridge test MAE 1255.47 was lower, but selection was not revised.
 - Artifact: `artifacts/release/model.joblib` and manifest, fitted through 2012-10-22. Replay: 70 paired one-day targets in `artifacts/monitoring_seed.sqlite`.
 - `.venv` installed from `requirements.txt`; `python -m pytest -q` in the pinned venv: **20 passed**. Local `/health`, `/predict` (14 dates), and `/monitoring` passed. Browser dashboard had zero console errors after favicon fix; screenshots in `output/playwright/`.
+- Initial local Git commit: `53fa965` (`Implement ForecastOps historical forecasting demo`). No remote is configured. GitHub CLI and Docker are absent; connected GitHub search found no ForecastOps repository.
 
 ## Current next step
 
-Finish repository hygiene and local Git commit if appropriate. Docker runtime and deployed Render checks require Docker plus a GitHub remote/Render service. Do not change frozen selection based on test results. If resuming, inspect Git status, confirm reports and `TASK_TRACKER.md`, then continue external deployment only with the necessary access.
+Docker runtime and deployed Render checks require Docker plus a GitHub remote/Render service. Do not change frozen selection based on test results. If resuming, inspect Git status and `TASK_TRACKER.md`, then continue external deployment with the necessary access. After deployment, add the live URL and deployed smoke results to README/tracker.
