@@ -21,7 +21,7 @@ Read this file, `ForecastOps_Implementation_Plan.md`, and `docs/experiment_contr
 - [x] Phase 9: Build and test FastAPI endpoints, including SQLite-backed monitoring.
 - [x] Phase 10: Build dashboard and visually verify in browser.
 - [ ] Phase 11: Tests, packaging, and smoke checks. Python suite (20 passed), local HTTP smoke, and browser checks passed; Docker smoke deferred at the user's request and Docker is unavailable on this machine.
-- [ ] Phase 12: Acceptance review, README, expanded beginner walkthrough, screenshots, and deployment instructions done. GitHub push is in progress; Render service creation and deployed smoke are pending.
+- [ ] Phase 12: Acceptance review, README, expanded beginner walkthrough, screenshots, deployment instructions, and GitHub publication done. Render service creation and deployed smoke are pending.
 
 ## Environment findings
 
@@ -38,7 +38,8 @@ Read this file, `ForecastOps_Implementation_Plan.md`, and `docs/experiment_contr
 - `.venv` installed from `requirements.txt`; `python -m pytest -q` in the pinned venv: **20 passed**. Local `/health`, `/predict` (14 dates), and `/monitoring` passed. Browser dashboard had zero console errors after favicon fix; screenshots in `output/playwright/`.
 - Initial local Git commit: `53fa965` (`Implement ForecastOps historical forecasting demo`), checkpoint commit `a5982c9`. GitHub CLI and Docker are absent.
 - Added a beginner-to-advanced request trace in `WALKTHROUGH.md` and current hosting instructions in `docs/DEPLOYMENT.md`. Recommended host: Render Free Docker web service; Render can build the image remotely. Railway and Hugging Face Spaces are documented with current cost caveats.
+- Pushed `main` to `https://github.com/saidarshan20/ForecastOps.git`. Remote branch verified at `e5cc2154a62bfb21ae45cc9c90b02b827e9e612c`; local working tree was clean after the push.
 
 ## Current next step
 
-Finish pushing `main` to the supplied GitHub repository. Docker runtime checks are deferred at the user's request. Render deployment needs an account/service; follow `docs/DEPLOYMENT.md`, then add the live URL and deployed smoke results to README/tracker. Do not change frozen selection based on test results. If resuming, inspect Git status and this tracker first.
+Docker runtime checks are deferred at the user's request. Render deployment needs an account/service; follow `docs/DEPLOYMENT.md`, then add the live URL and deployed smoke results to README/tracker. Do not change frozen selection based on test results. If resuming, inspect Git status and this tracker first.
