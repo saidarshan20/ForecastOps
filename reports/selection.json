@@ -1,0 +1,29 @@
+{
+  "selected_model": "holt_winters",
+  "parameters": {
+    "trend": "add",
+    "damped_trend": true,
+    "seasonal": "add",
+    "seasonal_periods": 7,
+    "initialization_method": "estimated"
+  },
+  "baseline_validation_mae": 962.0571428571428,
+  "best_candidate": "holt_winters",
+  "best_candidate_validation_mae": 793.4570975535054,
+  "relative_improvement": 0.17524951252159987,
+  "threshold": 0.01,
+  "reason": "best eligible candidate passed 1% validation MAE gate",
+  "created_at": "2026-10-28T12:12:02.401148+00:00",
+  "validation_files_sha256": {
+    "validation_metrics.csv": "4450e6c51614f2c4774057622cb7209866d5ddbc9010e20daec4febf147e3db0",
+    "validation_predictions.csv": "4421d9d6486412675ccd0606d445f731adf8e968af984b55ddb8bb305de05a39",
+    "validation_fold_metrics.csv": "f33fbca2dd0050f9978f87f0b0f3feca597ea3c2905017a38e8e08b27e945f20",
+    "validation_failures.csv": "4e95eeaefd32d318838e9f3b0f2b394fb5e6556aed9df2ff7d9844c6e5ef68f3"
+  },
+  "dependency_versions": {
+    "pandas": "2.3.3",
+    "numpy": "2.4.2",
+    "scikit-learn": "1.8.0",
+    "statsmodels": "0.15.0"
+  }
+}

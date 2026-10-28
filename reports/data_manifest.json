@@ -1,0 +1,10 @@
+{
+  "source": "UCI Bike Sharing Dataset, Hadi Fanaee-T, DOI 10.24432/C5W894, CC BY 4.0",
+  "source_url": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+  "source_file": "datasets/bike+sharing+dataset/day.csv",
+  "sha256": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be",
+  "rows": 731,
+  "start": "2011-01-01",
+  "end": "2012-12-31",
+  "prepared_at": "2026-10-28T12:11:22.375985+00:00"
+}

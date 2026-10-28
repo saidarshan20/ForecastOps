@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.playwright-cli/
+*.egg-info/
+runtime/
+data/raw/
+*.tmp
+.env
+datasets/*
+!datasets/bike+sharing+dataset/
+datasets/bike+sharing+dataset/*
+!datasets/bike+sharing+dataset/day.csv

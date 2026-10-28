@@ -1,0 +1,649 @@
+{
+  "mode": "historical_replay",
+  "selected_model": "holt_winters",
+  "baseline_selected": false,
+  "start": "2012-10-23",
+  "end": "2012-12-31",
+  "paired_days": 70,
+  "selected_day_ahead_mae": 1002.2148976960382,
+  "baseline_day_ahead_mae": 1589.9285714285713,
+  "latest_selected_rolling_28_mae": 897.7816981271702,
+  "latest_baseline_rolling_28_mae": 1330.607142857143,
+  "relative_deterioration": false,
+  "absolute_drift": false,
+  "zero_reference_policy": "no relative flag when reference MAE is zero",
+  "records": [
+    {
+      "target_date": "2012-10-23",
+      "selected_absolute_error": 467.94221230572384,
+      "baseline_absolute_error": 68.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-10-24",
+      "selected_absolute_error": 378.44730592015367,
+      "baseline_absolute_error": 232.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-10-25",
+      "selected_absolute_error": 92.55353814577666,
+      "baseline_absolute_error": 150.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-10-26",
+      "selected_absolute_error": 129.72987800375176,
+      "baseline_absolute_error": 2020.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-10-27",
+      "selected_absolute_error": 554.8876635732213,
+      "baseline_absolute_error": 238.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-10-28",
+      "selected_absolute_error": 2396.0151605568317,
+      "baseline_absolute_error": 2365.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-10-29",
+      "selected_absolute_error": 6607.334282741551,
+      "baseline_absolute_error": 7036.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-10-30",
+      "selected_absolute_error": 4649.558283813767,
+      "baseline_absolute_error": 6370.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-10-31",
+      "selected_absolute_error": 696.4802182122075,
+      "baseline_absolute_error": 2127.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-01",
+      "selected_absolute_error": 878.428839067541,
+      "baseline_absolute_error": 1373.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-02",
+      "selected_absolute_error": 667.7823067334411,
+      "baseline_absolute_error": 1597.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-03",
+      "selected_absolute_error": 224.5875391317686,
+      "baseline_absolute_error": 2714.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-04",
+      "selected_absolute_error": 589.5211949342374,
+      "baseline_absolute_error": 648.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-05",
+      "selected_absolute_error": 608.450825895944,
+      "baseline_absolute_error": 5237.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-06",
+      "selected_absolute_error": 609.9545656982855,
+      "baseline_absolute_error": 4590.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-07",
+      "selected_absolute_error": 741.1874461119214,
+      "baseline_absolute_error": 531.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-08",
+      "selected_absolute_error": 342.3455516294698,
+      "baseline_absolute_error": 671.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-09",
+      "selected_absolute_error": 550.5516248554522,
+      "baseline_absolute_error": 145.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-10",
+      "selected_absolute_error": 1011.069792379255,
+      "baseline_absolute_error": 1398.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-11",
+      "selected_absolute_error": 1861.5515589275383,
+      "baseline_absolute_error": 1745.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-12",
+      "selected_absolute_error": 894.8303457139355,
+      "baseline_absolute_error": 1010.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-13",
+      "selected_absolute_error": 1758.0601141391562,
+      "baseline_absolute_error": 1592.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-14",
+      "selected_absolute_error": 502.9467605615537,
+      "baseline_absolute_error": 460.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-15",
+      "selected_absolute_error": 507.3845190774982,
+      "baseline_absolute_error": 130.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-16",
+      "selected_absolute_error": 50.3944534516495,
+      "baseline_absolute_error": 294.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-17",
+      "selected_absolute_error": 101.92892932664108,
+      "baseline_absolute_error": 907.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-18",
+      "selected_absolute_error": 394.6338930916927,
+      "baseline_absolute_error": 2183.0,
+      "selected_rolling_28_mae": null,
+      "baseline_rolling_28_mae": null,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-19",
+      "selected_absolute_error": 511.3872171542462,
+      "baseline_absolute_error": 770.0,
+      "selected_rolling_28_mae": 1027.8552150412218,
+      "baseline_rolling_28_mae": 1735.75,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-20",
+      "selected_absolute_error": 352.48289544307954,
+      "baseline_absolute_error": 1540.0,
+      "selected_rolling_28_mae": 1023.7316680104132,
+      "baseline_rolling_28_mae": 1788.3214285714287,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-21",
+      "selected_absolute_error": 695.480059000095,
+      "baseline_absolute_error": 349.0,
+      "selected_rolling_28_mae": 1035.0542663346966,
+      "baseline_rolling_28_mae": 1792.5,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-22",
+      "selected_absolute_error": 3342.2298814974984,
+      "baseline_absolute_error": 3020.0,
+      "selected_rolling_28_mae": 1151.1141357401152,
+      "baseline_rolling_28_mae": 1895.0,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-23",
+      "selected_absolute_error": 1154.283278216979,
+      "baseline_absolute_error": 1788.0,
+      "selected_rolling_28_mae": 1187.7053286048736,
+      "baseline_rolling_28_mae": 1886.7142857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-24",
+      "selected_absolute_error": 2521.859584503565,
+      "baseline_absolute_error": 3352.0,
+      "selected_rolling_28_mae": 1257.954325780957,
+      "baseline_rolling_28_mae": 1997.9285714285713,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-25",
+      "selected_absolute_error": 1249.0704654377946,
+      "baseline_absolute_error": 2245.0,
+      "selected_rolling_28_mae": 1216.9920152409916,
+      "baseline_rolling_28_mae": 1993.642857142857,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-26",
+      "selected_absolute_error": 1667.9525531885852,
+      "baseline_absolute_error": 412.0,
+      "selected_rolling_28_mae": 1040.5855248998143,
+      "baseline_rolling_28_mae": 1757.0714285714287,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-27",
+      "selected_absolute_error": 62.198319912840816,
+      "baseline_absolute_error": 1675.0,
+      "selected_rolling_28_mae": 876.7512404747812,
+      "baseline_rolling_28_mae": 1589.392857142857,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-28",
+      "selected_absolute_error": 924.8397971164868,
+      "baseline_absolute_error": 114.0,
+      "selected_rolling_28_mae": 884.9069397213625,
+      "baseline_rolling_28_mae": 1517.5,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-29",
+      "selected_absolute_error": 795.1347718589859,
+      "baseline_absolute_error": 2898.0,
+      "selected_rolling_28_mae": 881.9321516067713,
+      "baseline_rolling_28_mae": 1571.9642857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-11-30",
+      "selected_absolute_error": 1006.4409289505211,
+      "baseline_absolute_error": 1758.0,
+      "selected_rolling_28_mae": 894.0271024002385,
+      "baseline_rolling_28_mae": 1577.7142857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-01",
+      "selected_absolute_error": 414.5097055054712,
+      "baseline_absolute_error": 2914.0,
+      "selected_rolling_28_mae": 900.8100369135849,
+      "baseline_rolling_28_mae": 1584.857142857143,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-02",
+      "selected_absolute_error": 336.1097075551179,
+      "baseline_absolute_error": 2225.0,
+      "selected_rolling_28_mae": 891.759626650045,
+      "baseline_rolling_28_mae": 1641.1785714285713,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-03",
+      "selected_absolute_error": 1714.617321820684,
+      "baseline_absolute_error": 1147.0,
+      "selected_rolling_28_mae": 931.2655729330714,
+      "baseline_rolling_28_mae": 1495.107142857143,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-04",
+      "selected_absolute_error": 1576.2636259175788,
+      "baseline_absolute_error": 2647.0,
+      "selected_rolling_28_mae": 965.7766107980461,
+      "baseline_rolling_28_mae": 1425.7142857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-05",
+      "selected_absolute_error": 22.057086795251053,
+      "baseline_absolute_error": 469.0,
+      "selected_rolling_28_mae": 940.0933836795937,
+      "baseline_rolling_28_mae": 1423.5,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-06",
+      "selected_absolute_error": 342.4778173729974,
+      "baseline_absolute_error": 52.0,
+      "selected_rolling_28_mae": 940.0981074561483,
+      "baseline_rolling_28_mae": 1401.392857142857,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-07",
+      "selected_absolute_error": 619.3162845581564,
+      "baseline_absolute_error": 660.0,
+      "selected_rolling_28_mae": 942.5539881598162,
+      "baseline_rolling_28_mae": 1419.7857142857142,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-08",
+      "selected_absolute_error": 188.28208962428744,
+      "baseline_absolute_error": 391.0,
+      "selected_rolling_28_mae": 913.1687130614246,
+      "baseline_rolling_28_mae": 1383.8214285714287,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-09",
+      "selected_absolute_error": 1702.6765873585746,
+      "baseline_absolute_error": 1421.0,
+      "selected_rolling_28_mae": 907.4946069339616,
+      "baseline_rolling_28_mae": 1372.25,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-10",
+      "selected_absolute_error": 416.177932820704,
+      "baseline_absolute_error": 1064.0,
+      "selected_rolling_28_mae": 890.3998779020603,
+      "baseline_rolling_28_mae": 1374.1785714285713,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-11",
+      "selected_absolute_error": 506.8005369632001,
+      "baseline_absolute_error": 1105.0,
+      "selected_rolling_28_mae": 845.712035860062,
+      "baseline_rolling_28_mae": 1356.7857142857142,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-12",
+      "selected_absolute_error": 84.23685072469107,
+      "baseline_absolute_error": 410.0,
+      "selected_rolling_28_mae": 830.7581105087455,
+      "baseline_rolling_28_mae": 1355.0,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-13",
+      "selected_absolute_error": 153.8771400308924,
+      "baseline_absolute_error": 157.0,
+      "selected_rolling_28_mae": 818.1328469713668,
+      "baseline_rolling_28_mae": 1355.9642857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-14",
+      "selected_absolute_error": 225.96359658525853,
+      "baseline_absolute_error": 603.0,
+      "selected_rolling_28_mae": 824.4031735118526,
+      "baseline_rolling_28_mae": 1367.0,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-15",
+      "selected_absolute_error": 301.18216088537156,
+      "baseline_absolute_error": 535.0,
+      "selected_rolling_28_mae": 831.5193603532359,
+      "baseline_rolling_28_mae": 1353.7142857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-16",
+      "selected_absolute_error": 940.0023674874619,
+      "baseline_absolute_error": 558.0,
+      "selected_rolling_28_mae": 850.9968058673704,
+      "baseline_rolling_28_mae": 1295.6785714285713,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-17",
+      "selected_absolute_error": 177.73612453989972,
+      "baseline_absolute_error": 585.0,
+      "selected_rolling_28_mae": 839.0806954168581,
+      "baseline_rolling_28_mae": 1289.0714285714287,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-18",
+      "selected_absolute_error": 672.3249387581172,
+      "baseline_absolute_error": 56.0,
+      "selected_rolling_28_mae": 850.5036255352524,
+      "baseline_rolling_28_mae": 1236.0714285714287,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-19",
+      "selected_absolute_error": 53.59055144364265,
+      "baseline_absolute_error": 52.0,
+      "selected_rolling_28_mae": 827.5790002653791,
+      "baseline_rolling_28_mae": 1225.4642857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-20",
+      "selected_absolute_error": 1176.4550423290584,
+      "baseline_absolute_error": 1404.0,
+      "selected_rolling_28_mae": 750.2298988665062,
+      "baseline_rolling_28_mae": 1167.75,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-21",
+      "selected_absolute_error": 1424.8835840913089,
+      "baseline_absolute_error": 1988.0,
+      "selected_rolling_28_mae": 759.8941955048751,
+      "baseline_rolling_28_mae": 1174.892857142857,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-22",
+      "selected_absolute_error": 2911.9107514786874,
+      "baseline_absolute_error": 3298.0,
+      "selected_rolling_28_mae": 773.8245943254152,
+      "baseline_rolling_28_mae": 1172.9642857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-23",
+      "selected_absolute_error": 1667.1831878818984,
+      "baseline_absolute_error": 1999.0,
+      "selected_rolling_28_mae": 788.7571915555618,
+      "baseline_rolling_28_mae": 1164.1785714285713,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-24",
+      "selected_absolute_error": 2343.3377668090025,
+      "baseline_absolute_error": 3665.0,
+      "selected_rolling_28_mae": 812.8780920420052,
+      "baseline_rolling_28_mae": 1280.357142857143,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-25",
+      "selected_absolute_error": 1770.4310807815364,
+      "baseline_absolute_error": 4544.0,
+      "selected_rolling_28_mae": 873.886404930173,
+      "baseline_rolling_28_mae": 1382.8214285714287,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-26",
+      "selected_absolute_error": 2068.1497007781886,
+      "baseline_absolute_error": 4826.0,
+      "selected_rolling_28_mae": 914.7189014895195,
+      "baseline_rolling_28_mae": 1551.107142857143,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-27",
+      "selected_absolute_error": 355.46702259124527,
+      "baseline_absolute_error": 2014.0,
+      "selected_rolling_28_mae": 899.0164818728144,
+      "baseline_rolling_28_mae": 1519.5357142857142,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-28",
+      "selected_absolute_error": 1247.1098287261002,
+      "baseline_absolute_error": 528.0,
+      "selected_rolling_28_mae": 907.6117997219422,
+      "baseline_rolling_28_mae": 1475.607142857143,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-29",
+      "selected_absolute_error": 744.9479706004354,
+      "baseline_absolute_error": 408.0,
+      "selected_rolling_28_mae": 919.4131663324767,
+      "baseline_rolling_28_mae": 1386.107142857143,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-30",
+      "selected_absolute_error": 440.1040476922233,
+      "baseline_absolute_error": 9.0,
+      "selected_rolling_28_mae": 923.1272499088019,
+      "baseline_rolling_28_mae": 1306.9642857142858,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    },
+    {
+      "target_date": "2012-12-31",
+      "selected_absolute_error": 1004.941871934996,
+      "baseline_absolute_error": 1809.0,
+      "selected_rolling_28_mae": 897.7816981271702,
+      "baseline_rolling_28_mae": 1330.607142857143,
+      "relative_deterioration": false,
+      "absolute_drift": false
+    }
+  ],
+  "generated_at": "2026-10-28T12:18:33.680165+00:00",
+  "source_checksum": "ad33f6061b65d70c23f9e93dccd03995d8d6b607f9beb46d275d0effe4c34419"
+}

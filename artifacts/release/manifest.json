@@ -1,0 +1,29 @@
+{
+  "model_id": "holt_winters",
+  "version": "v1-20121022",
+  "parameters": {
+    "trend": "add",
+    "damped_trend": true,
+    "seasonal": "add",
+    "seasonal_periods": 7,
+    "initialization_method": "estimated"
+  },
+  "trained_through": "2012-10-22",
+  "data_start": "2011-01-01",
+  "training_rows": 661,
+  "horizon_limit": 14,
+  "feature_schema": [],
+  "data_sha256": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be",
+  "selection_sha256": "a57c6f12c19e79a9360c2dd7c4d5435b5534f55a4119ddf4e71a70b3d8395357",
+  "dependency_versions": {
+    "numpy": "2.4.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.8.0",
+    "statsmodels": "0.15.0",
+    "joblib": "1.5.3"
+  },
+  "created_at": "2026-10-28T12:12:15.245567+00:00",
+  "forecast_calendar": "consecutive days following historical cutoff",
+  "clipping_policy": "clip negative forecasts to zero; preserve floating point",
+  "mode": "historical_demo"
+}
