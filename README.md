@@ -2,9 +2,9 @@
 
 Historical bike-demand forecasting with chronological backtesting, validation-only model selection, and a versioned FastAPI service.
 
-**Docker-verified local portfolio demo.** The included model forecasts from **2012-10-22**, using UCI Bike Sharing data from 2011â€“2012. No hosted service or current-day demand forecast is claimed. Run it locally without training.
+**Docker-verified local portfolio demo.** The included model forecasts from **2012-10-22**, using UCI Bike Sharing data from 2011–2012. No hosted service or current-day demand forecast is claimed. Run it locally without training.
 
-[Run with Docker](#run-with-docker) Â· [Results](#results) Â· [API](#api) Â· [Verification](docs/verification.md)
+[Run with Docker](#run-with-docker) · [Results](#results) · [API](#api) · [Verification](docs/verification.md)
 
 ![ForecastOps dashboard showing 14 daily historical bike-rental predictions from 23 October to 5 November 2012](docs/screenshots/forecast.jpg)
 
@@ -12,7 +12,7 @@ Historical bike-demand forecasting with chronological backtesting, validation-on
 
 - Five fixed forecasting candidates compared on the same chronological windows, with future targets hidden while each forecast is issued.
 - A validation-only selection rule with a 1% improvement gate over seasonal naive; the held-out test never changes the choice.
-- A persisted model serving 1â€“14 dated forecasts, strict input validation, readiness checks, and interactive API documentation.
+- A persisted model serving 1–14 dated forecasts, strict input validation, readiness checks, and interactive API documentation.
 - A responsive dashboard with dated forecast values, model comparison, horizon errors, and a separate SQLite monitoring replay.
 - Isolated verification that preserves frozen results, plus Docker startup, graceful restart, and fresh-container recovery.
 
@@ -37,9 +37,9 @@ The 731 daily observations are split into **591 initial training days**, **70 va
 
 | Partition | Dates | Evaluation |
 |---|---|---|
-| Initial training | 2011-01-01â€“2012-08-13 | History available at the first validation origin |
-| Validation | 2012-08-14â€“2012-10-22 | Five nonoverlapping 14-day windows; selection only |
-| Test | 2012-10-23â€“2012-12-31 | Five nonoverlapping 14-day windows; frozen choice |
+| Initial training | 2011-01-01–2012-08-13 | History available at the first validation origin |
+| Validation | 2012-08-14–2012-10-22 | Five nonoverlapping 14-day windows; selection only |
+| Test | 2012-10-23–2012-12-31 | Five nonoverlapping 14-day windows; frozen choice |
 
 At each origin, models fit on past actuals, issue all 14 predictions, and only then reveal that window's targets for scoring. History expands between windows. The [experiment contract](docs/experiment_contract.md) defines the fixed candidates, parameters, splits, and selection rule.
 
@@ -47,13 +47,13 @@ At each origin, models fit on past actuals, issue all 14 predictions, and only t
 |---|---:|---:|---:|---:|---:|
 | Seasonal naive | 962.06 | 1497.66 | 2156.97 | 32.22% | reference |
 | Last-value naive | 901.89 | 1426.69 | 1965.37 | 30.70% | 4.74% |
-| **Holt-Winters â€” selected** | **793.46** | **1349.46** | 1965.10 | 29.04% | 9.90% |
+| **Holt-Winters — selected** | **793.46** | **1349.46** | 1965.10 | 29.04% | 9.90% |
 | Ridge | 803.19 | 1255.47 | 1799.82 | 27.01% | 16.17% |
 | Histogram gradient boosting | 937.72 | 1356.47 | 1885.01 | 29.19% | 9.43% |
 
 **Holt-Winters won validation**, reducing seasonal-naive MAE by **17.52%**, above the fixed 1% gate. It reduced test MAE by **9.90%**. Ridge had lower test MAE, but selecting it afterward would use held-out results for model selection, so the original choice remains frozen. These are error reductions, not accuracy percentages.
 
-For selected Holt-Winters, test MAE was 1354.55 on days 1â€“7 and 1344.37 on days 8â€“14. Exact results: [comparison](reports/model_comparison.csv), [frozen selection](reports/selection.json), and [horizon errors](reports/horizon_errors.csv).
+For selected Holt-Winters, test MAE was 1354.55 on days 1–7 and 1344.37 on days 8–14. Exact results: [comparison](reports/model_comparison.csv), [frozen selection](reports/selection.json), and [horizon errors](reports/horizon_errors.csv).
 
 <details>
 <summary>View the model comparison screenshot</summary>
@@ -81,7 +81,7 @@ SQLite holds 140 issued forecasts and 70 actuals without duplication. Rolling MA
 |---|---|
 | `GET /health` | Validate release, inference, replay, reports, and required dashboard assets |
 | `GET /model` | Model version, cutoff, provenance, and selection rationale |
-| `POST /predict` | Return 1â€“14 consecutive historical predictions |
+| `POST /predict` | Return 1–14 consecutive historical predictions |
 | `GET /monitoring` | SQLite-backed historical replay metrics |
 | `GET /comparison` | Validation/test comparison for five candidates |
 | `GET /horizons` | Per-step and grouped horizon errors |
