@@ -2,15 +2,16 @@ from forecastops.config import ROOT
 from forecastops.data.loader import load_processed
 from forecastops.evaluation.backtest import backtest, summarize, horizon_summary
 from forecastops.models.registry import NAMES
+from forecastops.evaluation.evidence import require_new_report_directory
 import pandas as pd
 
 STARTS = pd.date_range("2012-08-14", periods=5, freq="14D")
 
 
-def main():
+def main(report=None):
     series = load_processed()
-    report = ROOT / "reports"
-    report.mkdir(exist_ok=True)
+    report = report or ROOT / "reports"
+    require_new_report_directory(report)
     runs = [backtest(name, series.loc[series.index < "2012-10-23"], STARTS) for name in NAMES]
     predictions = pd.concat([x[0] for x in runs], ignore_index=True)
     folds = pd.concat([x[1] for x in runs], ignore_index=True)
@@ -23,4 +24,9 @@ def main():
     print(summarize(predictions, folds, NAMES).to_string(index=False))
 
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    import argparse
+    from pathlib import Path
+    parser = argparse.ArgumentParser(description="Generate validation in a new, isolated directory")
+    parser.add_argument("--output-dir", type=Path, required=True)
+    main(parser.parse_args().output_dir)

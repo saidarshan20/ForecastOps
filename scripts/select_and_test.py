@@ -8,16 +8,28 @@ from forecastops.data.loader import load_processed
 from forecastops.evaluation.backtest import backtest, summarize, horizon_summary
 from forecastops.evaluation.selection import choose
 from forecastops.models.registry import NAMES
+from forecastops.evaluation.evidence import check_frozen_provenance, compare_csv
 
 STARTS = pd.date_range("2012-10-23", periods=5, freq="14D")
 
 
-def main():
-    report = ROOT / "reports"
+def main(report=None, frozen_report=None):
+    report = report or ROOT / "reports"
+    if report.resolve() == (ROOT / "reports").resolve():
+        raise ValueError("Use an isolated output directory; do not overwrite published test evidence")
+    if (report / "test_metrics.csv").exists():
+        raise FileExistsError("Test evidence already exists; choose a fresh output directory")
     metrics_path = report / "validation_metrics.csv"
     if not metrics_path.exists(): raise FileNotFoundError("Run validation first")
     validation = pd.read_csv(metrics_path)
     decision = choose(validation)
+    if frozen_report is not None:
+        previous = check_frozen_provenance(frozen_report)
+        for name in previous["validation_files_sha256"]:
+            compare_csv(frozen_report / name, report / name)
+        for field in ["selected_model", "parameters"]:
+            if previous[field] != decision[field]:
+                raise ValueError("Reproduced validation disagrees with frozen selection")
     decision.update({"created_at": datetime.now(timezone.utc).isoformat(),
                      "validation_files_sha256": {name: hashlib.sha256((report / name).read_bytes()).hexdigest()
                        for name in ["validation_metrics.csv", "validation_predictions.csv", "validation_fold_metrics.csv", "validation_failures.csv"]},
@@ -56,4 +68,11 @@ def _installed(name):
     except metadata.PackageNotFoundError: return False
 
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    import argparse
+    from pathlib import Path
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--frozen-report", type=Path, default=ROOT / "reports")
+    args = parser.parse_args()
+    main(args.output_dir, args.frozen_report)

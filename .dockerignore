@@ -1,4 +1,13 @@
 .venv
+.git
+.playwright-cli
+output
+*.egg-info
+scripts
+docs
+*.md
+.env
+.env.*
 __pycache__
 .pytest_cache
 runtime

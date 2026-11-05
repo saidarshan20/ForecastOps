@@ -6,6 +6,8 @@ from forecastops.data.loader import RAW, PROCESSED, load_raw
 
 
 def main():
+    if PROCESSED.exists() or (ROOT / "reports/data_manifest.json").exists():
+        raise FileExistsError("Prepared data already exists; use scripts.verify_experiment for safe reproduction")
     frame = load_raw()
     PROCESSED.parent.mkdir(parents=True, exist_ok=True)
     frame.to_csv(PROCESSED, index=False, date_format="%Y-%m-%d")

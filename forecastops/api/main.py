@@ -1,26 +1,40 @@
 import json
 import logging
-import sqlite3
-from pathlib import Path
+import math
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.exceptions import RequestValidationError
+from fastapi.encoders import jsonable_encoder
 from fastapi.staticfiles import StaticFiles
 from forecastops.config import ROOT
 from .schemas import PredictRequest, PredictResponse
-from .service import load_release, predict, ensure_runtime_db
-from forecastops.config import DB_PATH
-from forecastops.monitoring.metrics import summarize_replay
+from .service import load_release, predict, read_monitoring, read_report
 
 app = FastAPI(title="ForecastOps", description="Historical 2011–2012 bike rental demand forecasting demo")
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
 log = logging.getLogger(__name__)
 
 
+@app.exception_handler(RequestValidationError)
+async def invalid_request(request, exc):
+    # Python's JSON decoder accepts NaN/Infinity, but JSON error responses cannot.
+    # Preserve validation details while rendering only nonfinite inputs as strings.
+    detail = jsonable_encoder(exc.errors(), custom_encoder={float: lambda value: value if math.isfinite(value) else str(value)})
+    return JSONResponse(status_code=422, content={"detail": detail})
+
+
 @app.get("/health")
 def health():
     try:
-        load_release()
-        ensure_runtime_db()
+        manifest, payload = load_release()
+        predict(manifest, payload, 14)
+        model_info()
+        read_monitoring(manifest["model_id"])
+        comparison()
+        horizons()
+        for name in ["index.html", "app.js", "styles.css"]:
+            if not (ROOT / "web" / name).is_file():
+                raise FileNotFoundError(name)
         return {"status": "ready", "mode": "historical_demo"}
     except Exception as exc:
         log.exception("Readiness failed")
@@ -39,7 +53,7 @@ def model_info():
         raise HTTPException(status_code=503, detail="Required release artifact unavailable") from exc
 
 
-@app.post("/predict", response_model=PredictResponse)
+@app.post("/predict", response_model=PredictResponse, responses={200: {"description": "Artifact-generated forecasts beginning 2012-10-23. The documented example illustrates horizon=1; the default request returns 14 points through 2012-11-05."}})
 def make_prediction(request: PredictRequest):
     try:
         manifest, payload = load_release()
@@ -53,34 +67,24 @@ def make_prediction(request: PredictRequest):
 def monitoring():
     try:
         manifest, _ = load_release()
-        ensure_runtime_db()
-        import pandas as pd
-        with sqlite3.connect(DB_PATH) as db:
-            frame = pd.read_sql_query("SELECT f.target_date, f.model_version, ABS(f.prediction-a.actual) AS absolute_error "
-                                      "FROM forecast_issues f JOIN actuals a USING(target_date) WHERE f.horizon=1", db)
-        result = summarize_replay(frame, manifest["model_id"])
-        saved = json.loads((ROOT / "reports/monitoring_summary.json").read_text(encoding="utf-8"))
-        result["generated_at"] = saved["generated_at"]
-        result["source_checksum"] = saved["source_checksum"]
-        return result
+        return read_monitoring(manifest["model_id"])
     except Exception as exc:
         raise HTTPException(status_code=503, detail="Monitoring snapshot unavailable") from exc
 
 
 @app.get("/comparison")
 def comparison():
-    import pandas as pd
     try:
-        return pd.read_csv(ROOT / "reports/model_comparison.csv").replace({float("nan"): None}).to_dict(orient="records")
+        return read_report(ROOT / "reports/model_comparison.csv",
+                           ["model", "mae_validation", "mae_test", "rmse_test", "wape_test", "selected"], 5)
     except Exception as exc:
         raise HTTPException(status_code=503, detail="Comparison report unavailable") from exc
 
 
 @app.get("/horizons")
 def horizons():
-    import pandas as pd
     try:
-        return pd.read_csv(ROOT / "reports/horizon_errors.csv").replace({float("nan"): None}).to_dict(orient="records")
+        return read_report(ROOT / "reports/horizon_errors.csv", ["split", "model", "period", "mae", "count"], 160)
     except Exception as exc:
         raise HTTPException(status_code=503, detail="Horizon report unavailable") from exc
 
@@ -88,3 +92,8 @@ def horizons():
 @app.get("/", include_in_schema=False)
 def dashboard():
     return FileResponse(ROOT / "web/index.html")
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon():
+    return FileResponse(ROOT / "web/favicon.svg", media_type="image/svg+xml")

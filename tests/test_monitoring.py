@@ -6,7 +6,9 @@ from forecastops.monitoring.replay import run
 def test_replay_idempotent(tmp_path):
     path = tmp_path / "monitor.sqlite"
     first = run(path)
-    second = run(path)
+    summary_path = tmp_path / "summary.json"
+    second = run(path, summary_path=summary_path)
+    assert summary_path.exists()
     assert first["paired_days"] == second["paired_days"] == 70
     assert first["selected_day_ahead_mae"] == second["selected_day_ahead_mae"]
     assert first["records"][26]["selected_rolling_28_mae"] is None

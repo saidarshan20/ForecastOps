@@ -11,7 +11,10 @@ from .store import connect
 from .metrics import summarize_replay
 
 
-def run(path=SEED_DB):
+def run(path, *, summary_path=None):
+    # An explicit database never implies writing the published summary.
+    if path.resolve() == SEED_DB.resolve():
+        raise ValueError("Use an isolated database; the bundled seed is frozen evidence")
     selection = json.loads((ROOT / "reports/selection.json").read_text(encoding="utf-8"))
     selected = selection["selected_model"]
     series = load_processed()
@@ -42,6 +45,7 @@ def run(path=SEED_DB):
     connection.execute("UPDATE monitoring_runs SET ended_at=?, status='complete' WHERE run_id=?", (now, run_id))
     connection.commit()
     connection.close()
-    out = ROOT / "reports/monitoring_summary.json"
-    out.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    if summary_path is not None:
+        summary_path.parent.mkdir(parents=True, exist_ok=True)
+        summary_path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     return summary
